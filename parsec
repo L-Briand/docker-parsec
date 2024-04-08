@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
-#
-# Start the docker container shit
 
-set -e -x 
+set -e -x
 
 USERID="$(id -u)"
 GROUPID="$(id -g)"
 
-xhost "local:root"
+xhost "+local:"
 if [[ "$USERID" != "1000" ]] || [[ "$GROUPID" != "1000" ]]; then
   echo "Warning: defaulting to semi-insecure x (userid != containerUserId)"
-  xhost "local:root"
+  xhost "-local:"
 fi
 
 echo "launching parsec: (u${USERID}:g${GROUPID})"
-docker run -it --rm --init \
+docker run --rm --init \
  --env DISPLAY \
  --env PULSE_SERVER \
  -v /tmp/.X11-unix:/tmp/.X11-unix \
  -v "/run/user/$USERID/pulse:/run/user/1000/pulse" \
  --device /dev/dri \
  --net=host \
- ghcr.io/jaredallard/docker-parsec:latest app_daemon=1
+ orandja/parsec:latest app_daemon=1

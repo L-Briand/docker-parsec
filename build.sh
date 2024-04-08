@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-docker build -t jaredallard/parsec:latest .
-docker push jaredallard/parsec:latest
+docker build -t orandja/parsec:latest .

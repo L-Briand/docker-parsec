@@ -1,4 +1,4 @@
-# For help and a full list of settings visit: https://parsec.tv/config/
+# For help and a full list of settings visit: p
 
 # All configuration settings must appear on a new line.
 # Comments are allowed after a '#' character (end-of-line style).

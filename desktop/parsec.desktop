@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Parsec
+GenericName=Parsec
+Icon=parsec
+Exec=parsec -l %u
+Categories=Network;Game;Utility;
+StartupWMClass=parsecd
